@@ -1,0 +1,309 @@
+// main: style.less, out: ../style.css, compress: false, sourceMap: false
+
+
+@mobile-width: 640px;
+
+/* Settings Page */
+    .wdwa-header{
+        display:flex;
+        background:#fff;
+        margin-left:-20px;
+        flex-direction:column;
+        padding:20px 20px 0px 20px;
+        div {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            img{
+                margin:15px;
+            }
+        }
+        .branding{
+            flex-direction:row;
+        }
+        @media screen and (max-width: @mobile-width) {
+            div {
+                flex-direction:column;
+            }
+        }
+
+
+        .wdwa-sub-header{
+            display:flex;
+            flex-direction:column;
+            align-items: flex-end;
+            padding:10px;
+            line-height:25px;
+            p{
+                font-size:30px;
+                max-width:800px;
+            }
+        }
+    }
+
+    #wpbody-content {
+        padding-bottom:0px;
+    }
+
+    #main-wdwa-body-container{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        margin:30px 5px;
+        box-shadow:0 20px 70px rgba(0,0,0,.3);
+        /* Main Getting started area */
+        #super-easy-getting-started-area{
+            background: #fff;
+            padding:20px;
+            display:flex;
+            flex-direction: column;
+            width:80%;
+            box-sizing: border-box;
+            max-width:800px;
+            .row{
+                display:flex;
+                flex-direction: column; 
+                justify-content: center;
+                min-width:300px;    
+            }
+        }
+        /* Main side */
+        .main-sidebar{
+            width:20%;
+            max-width:800px;
+            box-sizing: border-box;
+            background: #555;
+            padding:0px;
+            display:flex;
+            flex-direction: column;
+            .title{
+                display:flex;
+                justify-content: center;
+                align-items:center;
+                font-size:16px;
+                color: #FFF;
+                font-weight:300;
+                border-bottom: 1px solid #444;
+                padding:15px;
+                span{
+                    border-bottom: 2px solid #F50;
+                }
+            }
+            a{
+                transition:.2s;
+                display:flex;
+                font-size:16px;
+                flex-direction: column;  
+                color:#DDD;   
+                text-decoration: none;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid #444;
+                padding:10px 0px;  
+                &:hover{
+                    background:#333;
+                    color:#fff;
+                }       
+            }
+            img{
+                width:118px;
+                border-radius:8px;
+            }
+        }
+        .__hide{
+            display:none;
+        }
+        .__center{
+            display:flex;
+            justify-content: center;
+            align-items:center;
+        }
+    }
+    @media screen and (max-width: 800px) {
+        #main-wdwa-body-container{
+            flex-direction: column;
+            #super-easy-getting-started-area, .main-sidebar{
+                width:auto;
+            }
+        }
+    }
+
+    /* main install button */
+    #install-wd-core-setup{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background:#393;
+        color:#eee;
+        padding:20px;
+        margin:10px;
+        border-radius:8px;
+        font-size:18px;
+        max-width:300px;
+        &:hover{
+            background: #5B5;
+            color:#fff;
+            cursor: pointer;
+        }
+    }
+
+    /* Loading Progress Bar */
+    .wdwa-meter { 
+        height: 20px;  /* Can be anything */
+        position: relative;
+        background: rgba(0,0,0,.1);
+        -moz-border-radius: 25px;
+        -webkit-border-radius: 25px;
+        border-radius: 25px;
+        padding: 2px;
+        margin:10px 20px;
+        box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+    }
+    .wdwa-meter > span {
+        display: block;
+        height: 100%;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background-color: #00c2fd;
+        box-shadow: 
+          inset 0 2px 9px  rgba(255,255,255,0.3),
+          inset 0 -2px 6px rgba(0,0,0,0.4);
+        position: relative;
+        overflow: hidden;
+      }
+      .wdwa-task-name{
+        color:#666;
+        padding-left:30px;
+        position:relative;
+        top:10px;
+      }
+    .wdwa-meter > span:after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0;
+        background-image: linear-gradient(
+          -45deg, 
+          rgba(255, 255, 255, .2) 25%, 
+          transparent 25%, 
+          transparent 50%, 
+          rgba(255, 255, 255, .2) 50%, 
+          rgba(255, 255, 255, .2) 75%, 
+          transparent 75%, 
+          transparent
+        );
+        z-index: 1;
+        background-size: 50px 50px;
+        animation: move 2s linear infinite;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        overflow: hidden;
+      }
+      .wdwa-meter > span:after, .animate > span > span {
+        animation: move 2s linear infinite;
+      }
+      @keyframes move {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 50px 50px;
+        }
+      }
+      @keyframes expandWidth {
+        0% { width: 0; }
+        100% { width: auto; }
+     }
+
+
+/* main body Area */
+.wdwa-body{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    line-height:25px;
+    width:100%;
+
+    .step-divider{
+        padding:20px;
+        font-size:25px;
+        width:100%;
+        max-width:900px;
+        h1{
+            color:#666;
+            line-height:60px;
+        }
+        span{
+            color:rgb(255, 72, 0);
+        }
+        p{
+            font-size:16px;
+        }
+        pre{
+            display:flex;
+            align-items:center;
+            justify-content: center;
+        }
+        i.fa-angle-down{
+            font-size:75px;
+            background:#fff;
+            border-radius:15px;
+            padding: 10px 30px;
+            box-shadow:2px 2px 8px rgba(0,0,0,.1);
+        }
+    }
+}
+
+/* overrides */
+#toast-container > div {
+    opacity: 1 !important;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.1) !important;
+  }
+  .toast-bottom-right {
+    bottom: 60px !important;
+  }
+  .toast {
+    background-color: #fff !important;
+    border-left: 6px solid #CCC;
+    color: #000 !important;
+    font-weight: bold;
+    position:relative;
+  }
+  .toast-close-button{
+    color:#999;
+  }
+  .toast-success {
+    background-color: #fff;
+    border-left: 6px solid #00CC00;
+    &::before{
+        color:#00CC00;
+        font-family: FontAwesome;
+        content: "\f00c";
+        position:absolute;
+        left:25px;
+    }
+  }
+  .toast-error {
+    background-color: #fff;
+    border-left: 6px solid #bd362f;
+  }
+  .toast-info {
+    background-color: #fff;
+    border-left: 6px solid #2f96b4;
+  }
+  .toast-warning {
+    background-color: #fff;
+    border-left: 6px solid #f89406;
+  }
+  #toast-container > div {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .elementor-message, .update-nag{
+      display:none;
+  }
+  
